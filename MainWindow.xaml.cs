@@ -25,6 +25,7 @@ namespace Laba_1
         Random rnd = new Random();
         public MainWindow()
         {
+
             InitializeComponent();
             //Создание треугольника со случайными координатами
             Point2D p1 = new Point2D(rnd.Next(0, (int)Scene.Width), rnd.Next(0,(int)Scene.Height));
