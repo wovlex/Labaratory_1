@@ -40,6 +40,14 @@ namespace Laba_1
             Point2D p3 = new Point2D(rnd.Next(0, (int)Scene.Width), rnd.Next(0, (int)Scene.Height));
             tr = new Triangle(p1, p2, p3);
         }
+        public void RisovanieKva()
+        {
+            Point2D p1 = new Point2D(rnd.Next(0, (int)Scene.Width), rnd.Next(0, (int)Scene.Height));
+            Point2D p2 = new Point2D(rnd.Next(0, (int)Scene.Width), rnd.Next(0, (int)Scene.Height));
+            Point2D p3 = new Point2D(rnd.Next(0, (int)Scene.Width), rnd.Next(0, (int)Scene.Height));
+            Point2D p4 = new Point2D(rnd.Next(0, (int)Scene.Width), rnd.Next(0, (int)Scene.Height));
+            tr = new Triangle(p1, p2, p3,p4);
+        }
         public void DrawTriangle(Triangle tr)
         {
             //Отрисовка треугольника с помощью функции отрисовки линии
@@ -84,7 +92,9 @@ namespace Laba_1
 
         private void ButtonKva_Click(object sender, RoutedEventArgs e)
         {
-
+            Risovanie();
+            ClearScene();
+            DrawTriangle(tr);
         }
 
         private void ButtonPra_Click(object sender, RoutedEventArgs e)
