@@ -63,7 +63,31 @@ namespace Laba_1
             Scene.Children.Add(line);
         }
 
+        private void ButtonTre_Click(object sender, RoutedEventArgs e)
+        {
 
+
+        }
+
+        private void ButtonKva_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void ButtonPra_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void Slider_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
+        {
+
+        }
+
+        private void Slider_ValueChanged_1(object sender, RoutedPropertyChangedEventArgs<double> e)
+        {
+
+        }
     }
 
 
