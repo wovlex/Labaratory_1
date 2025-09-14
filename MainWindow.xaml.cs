@@ -77,6 +77,7 @@ namespace Laba_1
             line.Y1 = p1.getY();
             line.X2 = p2.getX();
             line.Y2 = p2.getY();
+
             //Добавление линии в Canvas
             Scene.Children.Add(line);
         }
