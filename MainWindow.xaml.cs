@@ -22,6 +22,7 @@ namespace Laba_1
     {
 
         Triangle tr;
+        Fourangle pr;
         Random rnd = new Random();
         public MainWindow()
         {
@@ -48,7 +49,7 @@ namespace Laba_1
             Point2D p2 = new Point2D(rnd.Next(0, (int)Scene.Width), rnd.Next(0, (int)Scene.Height));
             Point2D p3 = new Point2D(rnd.Next(0, (int)Scene.Width), rnd.Next(0, (int)Scene.Height));
             Point2D p4 = new Point2D(rnd.Next(0, (int)Scene.Width), rnd.Next(0, (int)Scene.Height));
-            tr = new Triangle(p1, p2, p3);
+            pr = new Fourangle(p1, p2, p3,p4);
         }
         public void DrawTriangle(Triangle tr)
         {
@@ -61,6 +62,14 @@ namespace Laba_1
         {
             //Очистка Canvas от всех объектов
             Scene.Children.Clear();
+        }
+        public void DrawFourangle(Fourangle pr)
+        {
+            //Отрисовка треугольника с помощью функции отрисовки линии
+            DrawLine(pr.getP1(), pr.getP2());
+            DrawLine(pr.getP2(), pr.getP3());
+            DrawLine(pr.getP3(), pr.getP4());
+            DrawLine(pr.getP4(), pr.getP1());
         }
 
 
@@ -95,14 +104,14 @@ namespace Laba_1
 
         private void ButtonKva_Click(object sender, RoutedEventArgs e)
         {
-            Risovanie();
-            ClearScene();
-            DrawTriangle(tr);
+            
         }
 
         private void ButtonPra_Click(object sender, RoutedEventArgs e)
         {
-
+            RisovanieKva();
+            ClearScene();
+            DrawFourangle(pr);
         }
 
         private void Slider_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
