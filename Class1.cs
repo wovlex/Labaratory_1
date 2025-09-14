@@ -19,7 +19,7 @@ public class Point2D
     public Point2D(int x, int y)
     {
         //this используется для однозначного указания на атрибуты класса так как переменные имеют одинаковые имена
-    this.X = x;
+        this.X = x;
         this.Y = y;
     }
 

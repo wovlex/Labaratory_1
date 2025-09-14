@@ -14,15 +14,13 @@ namespace Laba_1
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
-   
-    
-    
-    
+
     public partial class MainWindow : Window
     {
 
         Triangle tr;
         Fourangle pr;
+        Kvadrat kv;
         Random rnd = new Random();
         public MainWindow()
         {
@@ -51,6 +49,14 @@ namespace Laba_1
             Point2D p4 = new Point2D(rnd.Next(0, (int)Scene.Width), rnd.Next(0, (int)Scene.Height));
             pr = new Fourangle(p1, p2, p3,p4);
         }
+        public void RisovanieKvadrat()
+        {
+            Point2D p1 = new Point2D(rnd.Next(0, (int)Scene.Width), rnd.Next(0, (int)Scene.Height));
+            Point2D p2 = new Point2D(rnd.Next(0, (int)Scene.Width), rnd.Next(0, (int)Scene.Height ));
+            Point2D p3 = new Point2D(rnd.Next(0, (int)Scene.Width), rnd.Next(0, (int)Scene.Height));
+            Point2D p4 = new Point2D(rnd.Next(0, (int)Scene.Width), rnd.Next(0, (int)Scene.Height ));
+            kv = new Kvadrat(p1, p2, p3, p4);
+        }
         public void DrawTriangle(Triangle tr)
         {
             //Отрисовка треугольника с помощью функции отрисовки линии
@@ -72,6 +78,14 @@ namespace Laba_1
             DrawLine(pr.getP4(), pr.getP1());
         }
 
+        public void DrawKvadrat(Kvadrat kv)
+        {
+            //Отрисовка кварата с помощью функции отрисовки линии
+            DrawLine(kv.getP1(), kv.getP2());
+            DrawLine(kv.getP2(), kv.getP3());
+            DrawLine(kv.getP3(), kv.getP4());
+            DrawLine(kv.getP4(), kv.getP1());
+        }
 
         //функция в основном теле программы
         public void DrawLine(Point2D p1, Point2D p2)
@@ -104,7 +118,9 @@ namespace Laba_1
 
         private void ButtonKva_Click(object sender, RoutedEventArgs e)
         {
-            
+            RisovanieKvadrat();
+            ClearScene();
+            DrawKvadrat(kv);
         }
 
         private void ButtonPra_Click(object sender, RoutedEventArgs e)
