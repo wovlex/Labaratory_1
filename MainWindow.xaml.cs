@@ -43,18 +43,32 @@ namespace Laba_1
         }
         public void RisovanieKva()
         {
-            Point2D p1 = new Point2D(rnd.Next(0, (int)Scene.Width), rnd.Next(0, (int)Scene.Height));
-            Point2D p2 = new Point2D(rnd.Next(0, (int)Scene.Width), rnd.Next(0, (int)Scene.Height));
-            Point2D p3 = new Point2D(rnd.Next(0, (int)Scene.Width), rnd.Next(0, (int)Scene.Height));
-            Point2D p4 = new Point2D(rnd.Next(0, (int)Scene.Width), rnd.Next(0, (int)Scene.Height));
-            pr = new Fourangle(p1, p2, p3,p4);
+
+            int width = rnd.Next(50, 150);
+            int height = rnd.Next(50, 150);
+
+            // Выбираем начальную точку так, чтобы весь прямоугольник помещался на сцене
+            int startX = rnd.Next(0, (int)Scene.Width - width);
+            int startY = rnd.Next(0, (int)Scene.Height - height);
+            Point2D p1 = new Point2D(startX, startY);
+
+            // Создаем остальные точки, чтобы образовать прямоугольник с углом 90 градусов
+            Point2D p2 = new Point2D(p1.getX() + width, p1.getY());
+            Point2D p3 = new Point2D(p2.getX(), p2.getY() + height);
+            Point2D p4 = new Point2D(p1.getX(), p1.getY() + height);
+
+            pr = new Fourangle(p1, p2, p3, p4);
         }
         public void RisovanieKvadrat()
         {
-            Point2D p1 = new Point2D(rnd.Next(0, (int)Scene.Width), rnd.Next(0, (int)Scene.Height));
-            Point2D p2 = new Point2D(rnd.Next(0, (int)Scene.Width), rnd.Next(0, (int)Scene.Height ));
-            Point2D p3 = new Point2D(rnd.Next(0, (int)Scene.Width), rnd.Next(0, (int)Scene.Height));
-            Point2D p4 = new Point2D(rnd.Next(0, (int)Scene.Width), rnd.Next(0, (int)Scene.Height ));
+            int sideLength = rnd.Next(50, 150);
+            Point2D startPoint = new Point2D(rnd.Next(0, (int)Scene.Width - sideLength), rnd.Next(0, (int)Scene.Height - sideLength));
+
+            Point2D p1 = startPoint;
+            Point2D p2 = new Point2D(p1.getX() + sideLength, p1.getY());
+            Point2D p3 = new Point2D(p2.getX(), p2.getY() + sideLength);
+            Point2D p4 = new Point2D(p1.getX(), p1.getY() + sideLength);
+
             kv = new Kvadrat(p1, p2, p3, p4);
         }
         public void DrawTriangle(Triangle tr)
