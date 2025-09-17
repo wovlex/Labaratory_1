@@ -11,8 +11,8 @@
          <Button x:Name="ButtonTre" Height="100" Width="170" Margin="0,0,500,250" Click="ButtonTre_Click" Content="Произвольный треугольник" FontSize="13"/>
         <Button x:Name="ButtonPra" Height="100" Width="170" Margin="251,42,279,292" Content="Произвольный прямоугольник" FontSize="11" Click="ButtonPra_Click"/>
         <Button x:Name="ButtonKva" Height="100" Width="170" Margin="500,42,30,292" Click="ButtonKva_Click" Content="Квадрат" FontSize="13"/>
-        <Slider HorizontalAlignment="Left" Margin="150,180,0,0" VerticalAlignment="Top" Width="500" ValueChanged="SliderX" Minimum="0" Maximum="100"/>
-        <Slider HorizontalAlignment="Left" Margin="150,230,0,0" VerticalAlignment="Top" Width="500" ValueChanged="SliderY"/>
+        <Slider HorizontalAlignment="Left" Margin="150,180,0,0" VerticalAlignment="Top" Width="500" ValueChanged="SliderX" Minimum="0" Maximum="500"/>
+        <Slider HorizontalAlignment="Left" Margin="150,230,0,0" VerticalAlignment="Top" Width="500" ValueChanged="SliderY" Minimum="0" Maximum="100"/>
         <TextBlock HorizontalAlignment="Left" Margin="60,180,0,0" TextWrapping="Wrap" Text="Сдвиг по X:" VerticalAlignment="Top" FontSize="15"/>
         <TextBlock HorizontalAlignment="Left" Margin="60,230,0,0" TextWrapping="Wrap" Text="Сдвиг по Y:" VerticalAlignment="Top" FontSize="15"/>
     </Grid>

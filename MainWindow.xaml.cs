@@ -20,8 +20,9 @@ namespace Laba_1
 
         Triangle tr;
         Fourangle pr;
-        Kvadrat kv;
+
         Random rnd = new Random();
+        bool last;
         public MainWindow()
         {
 
@@ -69,7 +70,7 @@ namespace Laba_1
             Point2D p3 = new Point2D(p2.getX(), p2.getY() + sideLength);
             Point2D p4 = new Point2D(p1.getX(), p1.getY() + sideLength);
 
-            kv = new Kvadrat(p1, p2, p3, p4);
+            pr = new Fourangle(p1, p2, p3, p4);
         }
         public void DrawTriangle(Triangle tr)
         {
@@ -92,14 +93,6 @@ namespace Laba_1
             DrawLine(pr.getP4(), pr.getP1());
         }
 
-        public void DrawKvadrat(Kvadrat kv)
-        {
-            //Отрисовка кварата с помощью функции отрисовки линии
-            DrawLine(kv.getP1(), kv.getP2());
-            DrawLine(kv.getP2(), kv.getP3());
-            DrawLine(kv.getP3(), kv.getP4());
-            DrawLine(kv.getP4(), kv.getP1());
-        }
 
         //функция в основном теле программы
         public void DrawLine(Point2D p1, Point2D p2)
@@ -122,11 +115,10 @@ namespace Laba_1
         private void ButtonTre_Click(object sender, RoutedEventArgs e)
         {
 
-            
             Risovanie();
             ClearScene();
             DrawTriangle(tr);
-
+            pr = null;
 
         }
 
@@ -134,7 +126,8 @@ namespace Laba_1
         {
             RisovanieKvadrat();
             ClearScene();
-            DrawKvadrat(kv);
+            DrawFourangle(pr);
+            tr = null;
         }
 
         private void ButtonPra_Click(object sender, RoutedEventArgs e)
@@ -142,16 +135,45 @@ namespace Laba_1
             RisovanieKva();
             ClearScene();
             DrawFourangle(pr);
+            tr = null;
         }
 
+         
         private void SliderX(object sender, RoutedPropertyChangedEventArgs<double> e)
         {
+            int a = (int)(e.NewValue - e.OldValue);
+
+            if (tr == null)
+            {
+                pr.addX(a);
+                ClearScene();
+                DrawFourangle(pr);
+            }
+            else if(pr == null)
+            {
+                tr.addX(a);
+                ClearScene();
+                DrawTriangle(tr);
+            }
 
         }
 
         private void SliderY(object sender, RoutedPropertyChangedEventArgs<double> e)
         {
+            int a = (int)(e.NewValue - e.OldValue);
 
+            if (pr == null)
+            {
+                tr.addY(a);
+                ClearScene();
+                DrawTriangle(tr);
+            }
+            else if (tr == null)
+            {
+                pr.addY(a);
+                ClearScene();
+                DrawFourangle(pr);
+            }
         }
     }
 

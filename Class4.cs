@@ -13,10 +13,10 @@ namespace Laba_1
     public class Kvadrat
     {
         //Атрибуты класса
-        private Point2D p1;
-        private Point2D p2;
-        private Point2D p3;
-        private Point2D p4;
+        public Point2D p1;
+        public Point2D p2;
+        public Point2D p3;
+        public Point2D p4;
         //Конструктор класса
         public Kvadrat(Point2D p1, Point2D p2, Point2D p3, Point2D p4)
         {

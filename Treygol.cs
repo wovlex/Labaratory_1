@@ -16,9 +16,9 @@ namespace Laba_1
     public class Triangle
     {
         //Атрибуты класса
-        private Point2D p1;
-        private Point2D p2;
-        private Point2D p3;
+        public Point2D p1;
+        public Point2D p2;
+        public Point2D p3;
         //Конструктор класса
         public Triangle(Point2D p1, Point2D p2, Point2D p3)
         {
