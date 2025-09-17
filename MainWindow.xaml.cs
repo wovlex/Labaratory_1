@@ -144,12 +144,12 @@ namespace Laba_1
             DrawFourangle(pr);
         }
 
-        private void Slider_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
+        private void SliderX(object sender, RoutedPropertyChangedEventArgs<double> e)
         {
 
         }
 
-        private void Slider_ValueChanged_1(object sender, RoutedPropertyChangedEventArgs<double> e)
+        private void SliderY(object sender, RoutedPropertyChangedEventArgs<double> e)
         {
 
         }
